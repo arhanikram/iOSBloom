@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		754DB5F126262BFC003E80CF /* FSCalendar in Resources */ = {isa = PBXBuildFile; fileRef = 754DB5F026262BFC003E80CF /* FSCalendar */; };
 		754DB62426262F3B003E80CF /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 754DB61226262F3A003E80CF /* FSCalendarDelegationProxy.m */; };
 		754DB62526262F3B003E80CF /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 754DB61726262F3B003E80CF /* FSCalendarHeaderView.m */; };
 		754DB62626262F3B003E80CF /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 754DB60726262F3A003E80CF /* FSCalendarTransitionCoordinator.m */; };
@@ -51,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751B1703262795BB0066296A /* Bloom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bloom-Bridging-Header.h"; sourceTree = "<group>"; };
 		754126B226278A4100ADA001 /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarWeekdayView.h; sourceTree = "<group>"; };
 		754126B326278A4100ADA001 /* FSCalendarCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarCollectionViewLayout.h; sourceTree = "<group>"; };
 		754126B426278A4100ADA001 /* FSCalendarExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarExtensions.h; sourceTree = "<group>"; };
@@ -67,7 +67,6 @@
 		754126BF26278A4100ADA001 /* FSCalendarStickyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarStickyHeader.h; sourceTree = "<group>"; };
 		754126C026278A4100ADA001 /* FSCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendar.h; sourceTree = "<group>"; };
 		754126C126278A4100ADA001 /* FSCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarCell.h; sourceTree = "<group>"; };
-		754DB5F026262BFC003E80CF /* FSCalendar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FSCalendar; sourceTree = "<group>"; };
 		754DB5F526262F28003E80CF /* FSCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarCell.h; sourceTree = "<group>"; };
 		754DB5F626262F28003E80CF /* FSCalendarDynamicHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarDynamicHeader.h; sourceTree = "<group>"; };
 		754DB5F726262F28003E80CF /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendarWeekdayView.h; sourceTree = "<group>"; };
@@ -217,8 +216,8 @@
 				754DB60726262F3A003E80CF /* FSCalendarTransitionCoordinator.m */,
 				754DB5F726262F28003E80CF /* FSCalendarWeekdayView.h */,
 				754DB60526262F3A003E80CF /* FSCalendarWeekdayView.m */,
+				751B1703262795BB0066296A /* Bloom-Bridging-Header.h */,
 				754126B126278A4100ADA001 /* include */,
-				754DB5F026262BFC003E80CF /* FSCalendar */,
 				EE4F2B1D261CDEC900771B4C /* AppDelegate.swift */,
 				EE4F2B1F261CDEC900771B4C /* SceneDelegate.swift */,
 				EE4F2B21261CDEC900771B4C /* ViewController.swift */,
@@ -352,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4F2B2A261CDECA00771B4C /* LaunchScreen.storyboard in Resources */,
-				754DB5F126262BFC003E80CF /* FSCalendar in Resources */,
 				EE4F2B27261CDECA00771B4C /* Assets.xcassets in Resources */,
 				EE4F2B25261CDEC900771B4C /* Main.storyboard in Resources */,
 			);
@@ -581,6 +579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.arhanikram.Bloom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloom/Bloom-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -600,6 +599,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.arhanikram.Bloom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloom/Bloom-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
