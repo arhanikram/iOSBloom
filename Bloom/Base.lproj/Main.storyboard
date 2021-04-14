@@ -20,23 +20,35 @@
                                 <rect key="frame" x="25" y="69" width="364" height="392"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-ez-Ehm">
+                                <rect key="frame" x="25" y="596" width="364" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="91q-Rl-XBo"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G5D-ja-4k5"/>
+                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-50" id="HwL-Z3-h7Q"/>
+                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="80" id="KBa-vW-cw6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="401" id="P6n-d7-FCx"/>
+                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wc9-mB-tbX"/>
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="hGk-lT-pXN"/>
+                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="leading" secondItem="KWa-4i-Fsw" secondAttribute="leading" id="mPV-mW-pW3"/>
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="w5X-Cb-v7K"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendar" destination="KWa-4i-Fsw" id="UHL-Qu-fJT"/>
+                        <outlet property="plantList" destination="ImM-ez-Ehm" id="tHI-Z3-gP8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="76"/>
+            <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>
