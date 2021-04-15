@@ -19,8 +19,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.\
         
         
-    }
     
+    
+    func calendar( _ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE MM-dd-YYYY"
+            let string = formatter.string(from: date)
+            print(string)
+        }
+    }
 
 
 }
