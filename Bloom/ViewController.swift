@@ -57,8 +57,6 @@ class ViewController: UIViewController {
 
         newFlower = Flower(flowerName: plantNameText.text!, lastWatered: lastWateredText.text!, lastFertilized: lastFertilizedText.text!, waterCylce: Int(waterCycleText.text!)!, fertilizerCycle: Int(fertilizerCycleText.text!)!)
         
-        newFlower.printFlower()
-        
         newGarden.addFlower(flowerObj: newFlower)
 
         
