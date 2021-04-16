@@ -39,7 +39,7 @@ class Garden: NSObject, NSCoding {
         return garden.count
     }
     
-    func currentFruit() ->Flower{
+    func currentFlower() ->Flower{
         return garden[self.current]
     }
     
@@ -50,11 +50,11 @@ class Garden: NSObject, NSCoding {
             self.current = 0
         }
     }
-    func addFruit(flowerObj: Flower){
+    func addFlower(flowerObj: Flower){
         garden.append(flowerObj)
     }
     
-    func removeCurrentFruit(){
+    func removeCurrentFlower(){
         if (self.current == self.garden.count - 1){
             garden.remove(at: current)
                 self.current = 0

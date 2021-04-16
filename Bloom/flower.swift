@@ -84,4 +84,15 @@ class Flower: NSObject, NSCoding {
     func getFertilizerCycle()->Int{
         return self.fertilizerCycle
     }
+    
+    func printFlower()
+    {
+        print(self.flowerName)
+        print(self.lastWatered)
+       
+        
+        print(self.lastFertilized)
+        print(self.waterCycle)
+        print(self.fertilizerCycle)
+    }
 }
