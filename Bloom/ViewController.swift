@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fertilizerCycleText: UITextField!
     
     var newFlower: Flower!
+    var newGarden: Garden!
     
     @IBOutlet weak var calendar: FSCalendar!
 
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newGarden = Garden()
         // Do any additional setup after loading the view.\
         
 
@@ -55,7 +57,14 @@ class ViewController: UIViewController {
 
         newFlower = Flower(flowerName: plantNameText.text!, lastWatered: lastWateredText.text!, lastFertilized: lastFertilizedText.text!, waterCylce: Int(waterCycleText.text!)!, fertilizerCycle: Int(fertilizerCycleText.text!)!)
         
-        newFlower.printFlower();
+        newFlower.printFlower()
+        
+        newGarden.addFlower(flowerObj: newFlower)
+
+        
+        newGarden.printGarden()
+        
+        
 
     }
 }

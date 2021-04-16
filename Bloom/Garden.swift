@@ -66,8 +66,19 @@ class Garden: NSObject, NSCoding {
     
     func setup(){
         self.garden.append(Flower(flowerName: "orchid", lastWatered: "2021-04-14", lastFertilized: "2021-04-14", waterCylce: 14, fertilizerCycle: 14)!)
-/*        self.garden.append(Flower(fruitName: "Banana", fruitImage: UIImage(named: "Fruit2.jpg")!, likes: 0, disLikes: 0)!)
-        self.garden.append(Flower(fruitName: "Apple", fruitImage: UIImage(named: "Fruit3.jpg")!, likes: 0, disLikes: 0)!)
-        self.garden.append(Flower(fruitName: "Grapes", fruitImage: UIImage(named: "Fruit4.jpg")!, likes: 0, disLikes: 0)!)*/
+
     }
+    
+    func printGarden()
+    {
+        
+        
+        for (i, _) in self.garden.enumerated() {
+        
+        print(self.garden[i].printFlower())
+        }
+            
+    }
+        
+        
 }
