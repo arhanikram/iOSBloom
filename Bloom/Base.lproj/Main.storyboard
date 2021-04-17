@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-4i-Fsw" customClass="FSCalendar">
-                                <rect key="frame" x="25" y="25" width="364" height="333"/>
+                                <rect key="frame" x="25" y="25" width="364" height="382"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-ez-Ehm">
@@ -34,14 +34,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="18c-Ze-3xJ" kind="show" identifier="flowerViewSegue" id="dpc-8s-68b"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mc-95-lU9">
-                                <rect key="frame" x="25" y="439" width="91" height="95"/>
+                                <rect key="frame" x="25" y="488" width="91" height="46"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crd-D2-zfi"/>
@@ -109,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water cycle:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYX-QN-iS2">
-                                <rect key="frame" x="20" y="460.5" width="147" height="50"/>
+                                <rect key="frame" x="20" y="509.5" width="147" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="58n-Xb-cSC"/>
                                 </constraints>
@@ -118,7 +115,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fertilizer cycle:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwn-ND-G2N">
-                                <rect key="frame" x="20" y="581.5" width="147" height="20.5"/>
+                                <rect key="frame" x="20" y="630.5" width="147" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="qgz-dz-jRI"/>
                                 </constraints>
@@ -145,12 +142,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bqg-qM-csQ">
-                                <rect key="frame" x="175" y="467.5" width="219" height="36"/>
+                                <rect key="frame" x="175" y="516.5" width="219" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq3-cG-xng">
-                                <rect key="frame" x="190" y="699" width="34" height="30"/>
+                                <rect key="frame" x="190" y="748" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButton:" destination="TKl-GF-sJa" eventType="touchUpInside" id="s2m-7d-811"/>
@@ -158,7 +155,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-tU-wJv">
-                                <rect key="frame" x="175" y="575.5" width="219" height="32.5"/>
+                                <rect key="frame" x="175" y="624.5" width="219" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -218,133 +215,10 @@
             </objects>
             <point key="canvasLocation" x="-1117" y="846"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="ZP5-qy-18i">
-            <objects>
-                <viewController id="18c-Ze-3xJ" customClass="FlowerViewController" customModule="Bloom" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CMt-lY-Ks3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hr-Gt-s4q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="19z-bW-WES">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="D8a-VV-UGo">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="backtoViewControllerSegue" id="Hh7-cy-WGv"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Last Watered:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83X-4H-ioI">
-                                <rect key="frame" x="20" y="141" width="106" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Last Fertilized:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0P-Gp-Rlr">
-                                <rect key="frame" x="20" y="212" width="112" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Water Cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vws-ZT-tif">
-                                <rect key="frame" x="20" y="292" width="97" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fertilizer Cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wW-F5-fic">
-                                <rect key="frame" x="20" y="365" width="118" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MM-DD-YYYY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qy-9y-49d">
-                                <rect key="frame" x="216" y="141" width="110" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MM-DD-YYYY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIg-fh-0ng">
-                                <rect key="frame" x="219" y="212" width="110" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="XX Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zje-ow-ig3">
-                                <rect key="frame" x="242" y="292" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="XX Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riz-nT-fCz">
-                                <rect key="frame" x="242" y="365" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Uk-cn-ZnU">
-                                <rect key="frame" x="184.5" y="433" width="45" height="30"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" systemColor="systemPinkColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteFlowerButton:" destination="18c-Ze-3xJ" eventType="touchUpInside" id="Xed-af-FN2"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8OP-Dr-uJt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="83X-4H-ioI" firstAttribute="top" secondItem="1hr-Gt-s4q" secondAttribute="bottom" constant="50" id="1ls-rl-gJ8"/>
-                            <constraint firstItem="3Uk-cn-ZnU" firstAttribute="centerX" secondItem="8OP-Dr-uJt" secondAttribute="centerX" id="4Oe-W6-NiU"/>
-                            <constraint firstItem="q0P-Gp-Rlr" firstAttribute="top" secondItem="83X-4H-ioI" secondAttribute="bottom" constant="50" id="6sx-Nf-hza"/>
-                            <constraint firstItem="riz-nT-fCz" firstAttribute="top" secondItem="zje-ow-ig3" secondAttribute="bottom" constant="50" id="8HB-mX-SoX"/>
-                            <constraint firstItem="zje-ow-ig3" firstAttribute="leading" secondItem="Vws-ZT-tif" secondAttribute="trailing" constant="125" id="Dje-gI-QrQ"/>
-                            <constraint firstItem="1wW-F5-fic" firstAttribute="leading" secondItem="8OP-Dr-uJt" secondAttribute="leading" constant="20" id="HNe-vn-CWn"/>
-                            <constraint firstItem="1wW-F5-fic" firstAttribute="top" secondItem="Vws-ZT-tif" secondAttribute="bottom" constant="50" id="Hdm-rW-TUe"/>
-                            <constraint firstItem="riz-nT-fCz" firstAttribute="leading" secondItem="1wW-F5-fic" secondAttribute="trailing" constant="104" id="Oke-9O-BX0"/>
-                            <constraint firstItem="Vws-ZT-tif" firstAttribute="top" secondItem="q0P-Gp-Rlr" secondAttribute="bottom" constant="50" id="P1H-wc-1Mb"/>
-                            <constraint firstItem="3Uk-cn-ZnU" firstAttribute="top" secondItem="eIg-fh-0ng" secondAttribute="bottom" constant="200" id="Y56-bR-5st"/>
-                            <constraint firstItem="eIg-fh-0ng" firstAttribute="leading" secondItem="q0P-Gp-Rlr" secondAttribute="trailing" constant="87" id="YCE-Fd-HZc"/>
-                            <constraint firstItem="q0P-Gp-Rlr" firstAttribute="leading" secondItem="8OP-Dr-uJt" secondAttribute="leading" constant="20" id="Z2t-TL-ac9"/>
-                            <constraint firstItem="eIg-fh-0ng" firstAttribute="top" secondItem="7qy-9y-49d" secondAttribute="bottom" constant="50" id="c5f-X0-eof"/>
-                            <constraint firstItem="Vws-ZT-tif" firstAttribute="leading" secondItem="8OP-Dr-uJt" secondAttribute="leading" constant="20" id="d2h-Xh-5dJ"/>
-                            <constraint firstItem="zje-ow-ig3" firstAttribute="top" secondItem="eIg-fh-0ng" secondAttribute="bottom" constant="50" id="dxz-hN-RDd"/>
-                            <constraint firstItem="7qy-9y-49d" firstAttribute="leading" secondItem="83X-4H-ioI" secondAttribute="trailing" constant="90" id="gVy-rm-DBF"/>
-                            <constraint firstItem="7qy-9y-49d" firstAttribute="top" secondItem="1hr-Gt-s4q" secondAttribute="bottom" constant="50" id="sBr-Z5-3Bp"/>
-                            <constraint firstItem="83X-4H-ioI" firstAttribute="leading" secondItem="8OP-Dr-uJt" secondAttribute="leading" constant="20" id="weD-F2-Ap6"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="c3k-O8-jK3" userLabel="FlowerViewControllerScene"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="deleteFlowerButton" destination="3Uk-cn-ZnU" id="k2Z-vD-7Lk"/>
-                        <outlet property="fertilizerCycleLabel" destination="riz-nT-fCz" id="aiD-9g-uU5"/>
-                        <outlet property="lastFertilizedLabel" destination="eIg-fh-0ng" id="Wkz-kq-yrG"/>
-                        <outlet property="lastWateredLabel" destination="CMt-lY-Ks3" id="omg-ip-Q3U"/>
-                        <outlet property="titleofFlower" destination="19z-bW-WES" id="o6z-QB-3Ch"/>
-                        <outlet property="waterCycleLabel" destination="zje-ow-ig3" id="gIP-V5-FLa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tb7-Ck-RO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="886" y="901"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Hh7-cy-WGv"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -118,24 +118,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
   
-//go to new screen
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Check for the InfoViewSegue identifier
-        if segue.identifier == "flowerViewSegue" {
-            let flowerViewController = segue.destination as? FlowerViewController
-            flowerViewController?.initWithData(sender as! Flower)
-                
-                // Get the row index of the selected news item
-//                let indexPath = tableView.indexPathForSelectedRow
-//
-//                // Initialize the title, description, image, and image link of the info view
-//                infoViewController.title = newsItems[indexPath!.row].title
-//                infoViewController.newsDesc = newsItems[indexPath!.row].description
-//                infoViewController.newsLink = newsItems[indexPath!.row].link
-//                infoViewController.newsImage = newsItems[indexPath!.row].image
-            
-        }
-    }
 
 
     @IBAction func addButton(_ sender: Any) {
