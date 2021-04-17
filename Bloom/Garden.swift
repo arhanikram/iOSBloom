@@ -64,6 +64,17 @@ class Garden: NSObject, NSCoding {
         }
     }
     
+    func getCurrentIndex(with flowerNametoFind: String) {
+        var curr = 0
+        while curr < garden.count {
+            if garden[curr].flowerName == flowerNametoFind {
+                self.current = curr
+                return
+            }
+            curr = curr + 1
+        }
+    }
+    
     func setup(){
         self.garden.append(Flower(flowerName: "orchid", lastWatered: "2021-04-14", lastFertilized: "2021-04-14", waterCylce: 14, fertilizerCycle: 14)!)
 

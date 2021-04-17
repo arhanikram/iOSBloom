@@ -46,6 +46,22 @@ class ViewController: UIViewController {
         }*/
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Check for the InfoViewSegue identifier
+        if segue.identifier == "flowerViewSegue" {
+            if let flowerViewController = segue.destination as? FlowerViewController {
+                // Get the row index of the selected news item
+                let indexPath = plantList.indexPathForSelectedRow
+                
+                // Initialize the title, description, image, and image link of the info view
+//                flowerViewController.flowerName = newGarden[indexPath!.row].flowerName
+//                flowerViewController.lastWatered = newGarden[indexPath!.row].lastWatered
+//                flowerViewController.lastFertilized = newGarden[indexPath!.row].lastFertilized
+//                flowerViewController.waterCycle = newGarden[indexPath!.row].waterCycle
+//                flowerViewController.fertilizerCycle = newGarden[].fertilizerCycle
+            }
+        }
+    }
 
 
     @IBAction func addButton(_ sender: Any) {
