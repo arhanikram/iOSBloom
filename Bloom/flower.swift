@@ -87,13 +87,13 @@ class Flower: NSObject, NSCoding {
     
     func printFlower()->String
     {
-        print(self.flowerName)
+        /*print(self.flowerName)
         print(self.lastWatered)
        
         
         print(self.lastFertilized)
         print(self.waterCycle)
-        print(self.fertilizerCycle)
+        print(self.fertilizerCycle)*/
         
         var formattedFlower: String
         

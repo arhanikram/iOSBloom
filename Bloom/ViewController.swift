@@ -63,9 +63,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          
             var sizeGarden: Int
             sizeGarden = newGarden.getCount()
+            
+            
 
             
-            for _ in 0...sizeGarden{
+            for _ in 1...sizeGarden{
                 plants.append(newGarden.currentFlower().printFlower())
                 newGarden.incrementCurrent()
 
@@ -86,7 +88,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(self.plants.count)
+        //print(self.plants.count)
+        print(newGarden.getCount())
         return self.plants.count
     }
     
@@ -95,6 +98,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if editingStyle == .delete {
             // Delete from your source, then update the tableView
             self.plants.remove(at: indexPath.row)
+            var fowerName = self.newGarden.getCurrentIndex(with: self.newGarden.currentFlower().getName())
+            self.newGarden.removeCurrentFlower()
+            print(newGarden.getCount())
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -135,7 +141,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         newGarden.addFlower(flowerObj: newFlower)
 
         
-        newGarden.printGarden()
+        //newGarden.printGarden()
         }
         else{
             print("All values must be filled")
