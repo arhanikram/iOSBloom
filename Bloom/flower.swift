@@ -85,7 +85,7 @@ class Flower: NSObject, NSCoding {
         return self.fertilizerCycle
     }
     
-    func printFlower()
+    func printFlower()->String
     {
         print(self.flowerName)
         print(self.lastWatered)
@@ -94,5 +94,11 @@ class Flower: NSObject, NSCoding {
         print(self.lastFertilized)
         print(self.waterCycle)
         print(self.fertilizerCycle)
+        
+        var formattedFlower: String
+        
+        formattedFlower = String(self.flowerName) + "\nLast Watered: " + String(self.lastWatered) + " \nLast Fertilized: " + String(self.lastFertilized) + "\nWater Cycle: " + String(self.waterCycle) + "\nFertilizer Cycle: " + String(self.fertilizerCycle)
+        
+        return formattedFlower
     }
 }
