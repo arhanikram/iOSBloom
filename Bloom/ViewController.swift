@@ -40,26 +40,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         newGarden = Garden()
         
         if plantList != nil{
+
             
             self.plantList.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        
+
         
         // Do any additional setup after loading the view.\
         
         
         plantList.delegate = self
         plantList.dataSource = self
-        
+
         //plantList.estimatedRowHeight = 200.0
         plantList.rowHeight = UITableView.automaticDimension
-        
-        plants.append(newGarden.currentFlower().printFlower())
+
+         
+            var sizeGarden: Int
+            sizeGarden = newGarden.getCount()
+
+            
+            for _ in 0...sizeGarden{
+                plants.append(newGarden.currentFlower().printFlower())
+                newGarden.incrementCurrent()
+
+            }
+
+
         
         }
     
@@ -70,9 +82,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(string)
         }*/
         
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(self.plants.count)
         return self.plants.count
     }
     
@@ -95,22 +109,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-
-
-    
-/*    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newGarden.currentIndex()
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = plantList.dequeueReusableCell(withIdentifier: "TableViewCell")!
-        cell.textLabel?.text = "test"
-        return cell
-    }*/
-
 
 
     @IBAction func addButton(_ sender: Any) {
