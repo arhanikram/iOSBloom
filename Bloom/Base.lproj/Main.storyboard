@@ -17,9 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-4i-Fsw" customClass="FSCalendar">
-
-                                <rect key="frame" x="25" y="25" width="364" height="382"/>
-
+                                <rect key="frame" x="25" y="25" width="364" height="333"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-ez-Ehm">
@@ -28,7 +26,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="91q-Rl-XBo"/>
                                 </constraints>
- deleteButton
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aj9-K2-Eha">
                                         <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
@@ -45,7 +42,6 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mc-95-lU9">
                                 <rect key="frame" x="25" y="439" width="91" height="95"/>
-                                
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crd-D2-zfi"/>
@@ -70,7 +66,6 @@
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="w5X-Cb-v7K"/>
                         </constraints>
                     </view>
-
                     <navigationItem key="navigationItem" id="goy-PI-saF"/>
                     <connections>
                         <outlet property="calendar" destination="KWa-4i-Fsw" id="UHL-Qu-fJT"/>
@@ -114,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water cycle:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYX-QN-iS2">
-                                <rect key="frame" x="20" y="509.5" width="147" height="50"/>
+                                <rect key="frame" x="20" y="460.5" width="147" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="58n-Xb-cSC"/>
                                 </constraints>
@@ -123,7 +118,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fertilizer cycle:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwn-ND-G2N">
-                                <rect key="frame" x="20" y="630.5" width="147" height="20.5"/>
+                                <rect key="frame" x="20" y="581.5" width="147" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="qgz-dz-jRI"/>
                                 </constraints>
@@ -150,12 +145,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bqg-qM-csQ">
-                                <rect key="frame" x="175" y="516.5" width="219" height="36"/>
+                                <rect key="frame" x="175" y="467.5" width="219" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq3-cG-xng">
-                                <rect key="frame" x="190" y="748" width="34" height="30"/>
+                                <rect key="frame" x="190" y="699" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButton:" destination="TKl-GF-sJa" eventType="touchUpInside" id="s2m-7d-811"/>
@@ -163,7 +158,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-tU-wJv">
-                                <rect key="frame" x="175" y="624.5" width="219" height="32.5"/>
+                                <rect key="frame" x="175" y="575.5" width="219" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -332,15 +327,18 @@
                         <outlet property="fertilizerCycleLabel" destination="riz-nT-fCz" id="aiD-9g-uU5"/>
                         <outlet property="lastFertilizedLabel" destination="eIg-fh-0ng" id="Wkz-kq-yrG"/>
                         <outlet property="lastWateredLabel" destination="CMt-lY-Ks3" id="omg-ip-Q3U"/>
-                        <outlet property="titleofFlower" destination="19z-bW-WES" id="zsy-UJ-FGU"/>
+                        <outlet property="titleofFlower" destination="19z-bW-WES" id="o6z-QB-3Ch"/>
                         <outlet property="waterCycleLabel" destination="zje-ow-ig3" id="gIP-V5-FLa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tb7-Ck-RO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="810"/>
+            <point key="canvasLocation" x="886" y="901"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hh7-cy-WGv"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -19,21 +19,27 @@ class FlowerViewController: UIViewController {
     var lastFertilized: String!
     var waterCycle: String!
     var fertilizerCycle: String!
+    var currentFlower: Flower?
     
+    @IBOutlet weak var titleofFlower: UINavigationItem!
+    
+    func initWithData(_ flower : Flower){
+        currentFlower = flower
+    }
     @IBAction func deleteFlowerButton(_ sender: Any) {
 //        Garden.getCurrentIndex(with: flowerName)
-        
-        
+        titleofFlower.title = currentFlower?.getName()
         
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lastFertilizedLabel.text = lastWatered
-        self.lastFertilizedLabel.text = lastFertilized
-        self.waterCycleLabel.text = waterCycle
-        self.fertilizerCycleLabel.text = fertilizerCycle
+        titleofFlower.title = currentFlower?.getName()
+//        self.lastFertilizedLabel.text = lastWatered
+//        self.lastFertilizedLabel.text = lastFertilized
+//        self.waterCycleLabel.text = waterCycle
+//        self.fertilizerCycleLabel.text = fertilizerCycle
         // Do any additional setup after loading the view.
     }
     

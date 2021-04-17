@@ -90,6 +90,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return self.plants.count
     }
     
+    //slide to button
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete from your source, then update the tableView
+            self.plants.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -109,21 +118,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
   
-  deleteButton
+//go to new screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Check for the InfoViewSegue identifier
         if segue.identifier == "flowerViewSegue" {
-            if let flowerViewController = segue.destination as? FlowerViewController {
-                // Get the row index of the selected news item
-                let indexPath = plantList.indexPathForSelectedRow
+            let flowerViewController = segue.destination as? FlowerViewController
+            flowerViewController?.initWithData(sender as! Flower)
                 
-                // Initialize the title, description, image, and image link of the info view
-//                flowerViewController.flowerName = newGarden[indexPath!.row].flowerName
-//                flowerViewController.lastWatered = newGarden[indexPath!.row].lastWatered
-//                flowerViewController.lastFertilized = newGarden[indexPath!.row].lastFertilized
-//                flowerViewController.waterCycle = newGarden[indexPath!.row].waterCycle
-//                flowerViewController.fertilizerCycle = newGarden[].fertilizerCycle
-            }
+                // Get the row index of the selected news item
+//                let indexPath = tableView.indexPathForSelectedRow
+//
+//                // Initialize the title, description, image, and image link of the info view
+//                infoViewController.title = newsItems[indexPath!.row].title
+//                infoViewController.newsDesc = newsItems[indexPath!.row].description
+//                infoViewController.newsLink = newsItems[indexPath!.row].link
+//                infoViewController.newsImage = newsItems[indexPath!.row].image
+            
         }
     }
 
