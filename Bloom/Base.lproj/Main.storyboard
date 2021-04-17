@@ -17,7 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-4i-Fsw" customClass="FSCalendar">
-                                <rect key="frame" x="25" y="25" width="364" height="333"/>
+
+                                <rect key="frame" x="25" y="25" width="364" height="382"/>
+
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-ez-Ehm">
@@ -26,6 +28,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="91q-Rl-XBo"/>
                                 </constraints>
+ deleteButton
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aj9-K2-Eha">
                                         <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
@@ -42,6 +45,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mc-95-lU9">
                                 <rect key="frame" x="25" y="439" width="91" height="95"/>
+                                
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crd-D2-zfi"/>
@@ -57,7 +61,7 @@
                             <constraint firstItem="ImM-ez-Ehm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="80" id="KBa-vW-cw6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="401" id="P6n-d7-FCx"/>
                             <constraint firstItem="8mc-95-lU9" firstAttribute="top" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="81" id="TWG-vY-i3n"/>
-                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wc9-mB-tbX"/>
+                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" identifier="TableViewCell" id="Wc9-mB-tbX"/>
                             <constraint firstItem="ImM-ez-Ehm" firstAttribute="top" secondItem="8mc-95-lU9" secondAttribute="bottom" constant="8" id="eI8-7O-2LF"/>
                             <constraint firstItem="8mc-95-lU9" firstAttribute="leading" secondItem="ImM-ez-Ehm" secondAttribute="leading" id="ej1-LK-8yJ"/>
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="hGk-lT-pXN"/>
@@ -66,6 +70,7 @@
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="w5X-Cb-v7K"/>
                         </constraints>
                     </view>
+
                     <navigationItem key="navigationItem" id="goy-PI-saF"/>
                     <connections>
                         <outlet property="calendar" destination="KWa-4i-Fsw" id="UHL-Qu-fJT"/>
@@ -154,6 +159,7 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButton:" destination="TKl-GF-sJa" eventType="touchUpInside" id="s2m-7d-811"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="F9m-1v-0nJ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-tU-wJv">
@@ -215,7 +221,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkL-nM-rQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VZo-I9-Yfa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-536.231884057971" y="842.41071428571422"/>
+            <point key="canvasLocation" x="-1117" y="846"/>
         </scene>
         <!--Title-->
         <scene sceneID="ZP5-qy-18i">
