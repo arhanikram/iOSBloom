@@ -13,22 +13,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bloom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-4i-Fsw" customClass="FSCalendar">
-                                <rect key="frame" x="25" y="69" width="364" height="392"/>
+                                <rect key="frame" x="25" y="25" width="364" height="382"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-ez-Ehm">
-                                <rect key="frame" x="25" y="596" width="364" height="250"/>
+                                <rect key="frame" x="25" y="542" width="364" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="91q-Rl-XBo"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="lgC-kH-KPi">
+                                        <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgC-kH-KPi" id="7ac-JR-tu4">
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="KuP-Wh-fs2"/>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="iF4-7D-SuY"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mc-95-lU9">
-                                <rect key="frame" x="25" y="542" width="91" height="46"/>
+                                <rect key="frame" x="25" y="488" width="91" height="46"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crd-D2-zfi"/>
@@ -44,7 +58,7 @@
                             <constraint firstItem="ImM-ez-Ehm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="80" id="KBa-vW-cw6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="401" id="P6n-d7-FCx"/>
                             <constraint firstItem="8mc-95-lU9" firstAttribute="top" secondItem="KWa-4i-Fsw" secondAttribute="bottom" constant="81" id="TWG-vY-i3n"/>
-                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wc9-mB-tbX"/>
+                            <constraint firstItem="ImM-ez-Ehm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" identifier="TableViewCell" id="Wc9-mB-tbX"/>
                             <constraint firstItem="ImM-ez-Ehm" firstAttribute="top" secondItem="8mc-95-lU9" secondAttribute="bottom" constant="8" id="eI8-7O-2LF"/>
                             <constraint firstItem="8mc-95-lU9" firstAttribute="leading" secondItem="ImM-ez-Ehm" secondAttribute="leading" id="ej1-LK-8yJ"/>
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="hGk-lT-pXN"/>
@@ -53,6 +67,7 @@
                             <constraint firstItem="KWa-4i-Fsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="w5X-Cb-v7K"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Z8w-7k-cht"/>
                     <connections>
                         <outlet property="calendar" destination="KWa-4i-Fsw" id="UHL-Qu-fJT"/>
                         <outlet property="plantList" destination="ImM-ez-Ehm" id="tHI-Z3-gP8"/>
@@ -140,6 +155,7 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButton:" destination="TKl-GF-sJa" eventType="touchUpInside" id="s2m-7d-811"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="F9m-1v-0nJ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-tU-wJv">
@@ -201,7 +217,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkL-nM-rQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VZo-I9-Yfa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-536.231884057971" y="842.41071428571422"/>
+            <point key="canvasLocation" x="-1117" y="846"/>
         </scene>
     </scenes>
     <resources>
