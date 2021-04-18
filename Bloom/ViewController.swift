@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if editingStyle == .delete {
             // Delete from your source, then update the tableView
             self.plants.remove(at: indexPath.row)
-            var fowerName = self.newGarden.getCurrentIndex(with: self.newGarden.currentFlower().getName())
+            self.newGarden.getCurrentIndex(with: self.newGarden.currentFlower().getName())
             self.newGarden.removeCurrentFlower()
             print(newGarden.getCount())
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -113,7 +113,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         
         // set the text from the data model
-        cell.textLabel?.text = self.plants[indexPath.row]
+        cell.textLabel?.text = self.newGarden.garden[indexPath.row].printFlower()
         
         cell.sizeToFit()
         cell.textLabel?.sizeToFit()
@@ -124,12 +124,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
   
-
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        return
+    }
+    
 
     @IBAction func addButton(_ sender: Any) {
-        
     }
+    
     @IBAction func saveButton(_ sender: Any) {
+  
         
         //I was thinking this button could take us to the new plant view screen as well maybe
 
@@ -146,6 +151,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else{
             print("All values must be filled")
         }
+        
+        self.performSegue (withIdentifier: "return", sender: self)
         
         
     }
