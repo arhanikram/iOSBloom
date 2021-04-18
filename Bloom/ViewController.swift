@@ -38,6 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var selectedDay: Date!
     let formatter = DateFormatter()
     
+    var string: String!
+    
     
 
     
@@ -48,17 +50,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         newGarden = Garden()
 
         if plantList != nil{
-
-            
             self.plantList.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
             // Do any additional setup after loading the view.\
             plantList.delegate = self
             plantList.dataSource = self
             plantList.rowHeight = UITableView.automaticDimension
-
-         
-            
-
         }
 
     }
@@ -87,27 +83,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         
         // set the text from the data model
-
-        let string: String!
-        if (selectedDay != nil){
-            string = formatter.string(from: selectedDay)
-            print(selectedDay)
-            
-        }else{
-            string = formatter.string(from: date)
-        }
-        print(selectedDay)
-        //print(string!)
-
-        if (self.newGarden.garden[indexPath.row].getWatered() == string){
             cell.textLabel?.text = self.newGarden.garden[indexPath.row].printFlower()
             cell.sizeToFit()
             cell.textLabel?.sizeToFit()
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.lineBreakMode = .byWordWrapping
-        }
-
-        
         return cell
     }
   
