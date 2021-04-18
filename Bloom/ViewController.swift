@@ -24,6 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var newFlower: Flower!
     var newGarden: Garden!
+    var sharedGarden : Garden?
+    var currentFlower : Flower?
+
     
     @IBOutlet weak var calendar: FSCalendar!
 
@@ -36,68 +39,50 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let cellReuseIdentifier = "cell"
     
-    var plants: [String] = []
+    //var plants: [String] = []
     
-    
+    var date: Date!
+
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()       
 
         newGarden = Garden()
-        
+
         if plantList != nil{
 
             
             self.plantList.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-
-        
-        // Do any additional setup after loading the view.\
-        
-        
-        plantList.delegate = self
-        plantList.dataSource = self
-
-        //plantList.estimatedRowHeight = 200.0
-        plantList.rowHeight = UITableView.automaticDimension
+            // Do any additional setup after loading the view.\
+            plantList.delegate = self
+            plantList.dataSource = self
+            plantList.rowHeight = UITableView.automaticDimension
 
          
-            var sizeGarden: Int
-            sizeGarden = newGarden.getCount()
-            
             
 
-            
-            for _ in 1...sizeGarden{
-                plants.append(newGarden.currentFlower().printFlower())
-                newGarden.incrementCurrent()
-
-            }
-
-
-        
         }
+
+    }
     
-    /*func calendar( _ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+    func calendar( _ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
             let formatter = DateFormatter()
             formatter.dateFormat = "EEEE MM-dd-YYYY"
             let string = formatter.string(from: date)
             print(string)
-        }*/
+        }
         
-
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print(self.plants.count)
         print(newGarden.getCount())
-        return self.plants.count
+        return self.newGarden.getCount()
     }
     
     //slide to button
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete from your source, then update the tableView
-            self.plants.remove(at: indexPath.row)
             self.newGarden.getCurrentIndex(with: self.newGarden.currentFlower().getName())
             self.newGarden.removeCurrentFlower()
             print(newGarden.getCount())
@@ -113,8 +98,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         
         // set the text from the data model
+
         cell.textLabel?.text = self.newGarden.garden[indexPath.row].printFlower()
-        
         cell.sizeToFit()
         cell.textLabel?.sizeToFit()
         cell.textLabel?.numberOfLines = 0
@@ -129,24 +114,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return
     }
     
-
     @IBAction func addButton(_ sender: Any) {
+        
     }
     
     @IBAction func saveButton(_ sender: Any) {
-  
-        
-        //I was thinking this button could take us to the new plant view screen as well maybe
 
         if !(plantNameText.text!.isEmpty) && !(lastWateredText.text!.isEmpty) && !(lastFertilizedText.text!.isEmpty) && !(waterCycleText.text!.isEmpty) && !(fertilizerCycleText.text!.isEmpty) {
-        
             
             newFlower = Flower(flowerName: plantNameText.text!, lastWatered: lastWateredText.text!, lastFertilized: lastFertilizedText.text!, waterCylce: Int(waterCycleText.text!)!, fertilizerCycle: Int(fertilizerCycleText.text!)!)
-        
-        newGarden.addFlower(flowerObj: newFlower)
 
         
-        //newGarden.printGarden()
+            newGarden.addFlower(flowerObj: newFlower)
+
         }
         else{
             print("All values must be filled")

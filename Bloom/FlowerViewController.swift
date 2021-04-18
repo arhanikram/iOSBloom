@@ -1,57 +1,46 @@
 //
-//  FlowerViewController.swift
-//  Bloom
+//  SharedFruitCollection.swift
+//  chux9490_a1
 //
-//  Created by Rana Qaderi on 2021-04-16.
+//  Created by Julian on 2020-02-29.
+//  Copyright © 2020 CP469. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class FlowerViewController: UIViewController {
-
-    @IBOutlet var lastWateredLabel: UIView!
-    @IBOutlet weak var lastFertilizedLabel: UILabel!
-    @IBOutlet weak var waterCycleLabel: UILabel!
-    @IBOutlet weak var fertilizerCycleLabel: UILabel!
+class SharingGarden {
+    static let sharedGarden = SharingGarden()
     
-    var flowerName: String!
-    var lastWatered: String!
-    var lastFertilized: String!
-    var waterCycle: String!
-    var fertilizerCycle: String!
-    var currentFlower: Flower?
+    let fileName = "plants.archive"
+    private let rootKey = "rootKey"
+    var newGarden: Garden?
     
-    @IBOutlet weak var titleofFlower: UINavigationItem!
-    
-    func initWithData(_ flower : Flower){
-        currentFlower = flower
-    }
-    @IBAction func deleteFlowerButton(_ sender: Any) {
-//        Garden.getCurrentIndex(with: flowerName)
-        titleofFlower.title = currentFlower?.getName()
-        
+    func dataFilePath() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(
+            FileManager.SearchPathDirectory.documentDirectory,
+            FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentsDirectory = paths[0] as NSString
+        return documentsDirectory.appendingPathComponent(fileName) as String
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        titleofFlower.title = currentFlower?.getName()
-//        self.lastFertilizedLabel.text = lastWatered
-//        self.lastFertilizedLabel.text = lastFertilized
-//        self.waterCycleLabel.text = waterCycle
-//        self.fertilizerCycleLabel.text = fertilizerCycle
-        // Do any additional setup after loading the view.
+    func loadGarden(){
+        let filePath = self.dataFilePath()
+        if (FileManager.default.fileExists(atPath: filePath)) {
+            let data = NSMutableData(contentsOfFile: filePath)!
+            if (filePath != "") {
+                let unarchiver = try! NSKeyedUnarchiver(forReadingFrom: data as Data)
+                SharingGarden.sharedGarden.newGarden = (unarchiver.decodeObject(forKey: rootKey) as? Garden)! as Garden
+                unarchiver.finishDecoding()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func saveGarden() {
+        let filePath = self.dataFilePath()
+        let data = NSMutableData()
+        let archiver = NSKeyedArchiver(requiringSecureCoding: true)
+        archiver.encode(SharingGarden.sharedGarden.newGarden, forKey: rootKey)
+        archiver.finishEncoding()
+        data.write(toFile: filePath, atomically: true)
     }
-    */
-
 }
