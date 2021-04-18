@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="250" id="91q-Rl-XBo"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aj9-K2-Eha">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="aj9-K2-Eha">
                                         <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aj9-K2-Eha" id="UFH-3l-dQG">
@@ -151,7 +151,6 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButton:" destination="TKl-GF-sJa" eventType="touchUpInside" id="s2m-7d-811"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="F9m-1v-0nJ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXa-tU-wJv">
@@ -208,6 +207,7 @@
                         <outlet property="lastWateredText" destination="esn-IG-fw6" id="d9P-A1-TWa"/>
                         <outlet property="plantNameText" destination="9Mn-lo-3dH" id="Bvr-cv-beq"/>
                         <outlet property="waterCycleText" destination="Bqg-qM-csQ" id="c6t-lP-A6m"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SegueBackToVC" id="nQM-Ie-MEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkL-nM-rQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

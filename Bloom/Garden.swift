@@ -61,6 +61,7 @@ class Garden: NSObject, NSCoding {
             }
         else{
             garden.remove(at: current)
+            self.current -= 1
         }
     }
     
@@ -77,6 +78,8 @@ class Garden: NSObject, NSCoding {
     
     func setup(){
         self.garden.append(Flower(flowerName: "Orchid", lastWatered: "2021-04-14", lastFertilized: "2021-04-14", waterCylce: 14, fertilizerCycle: 14)!)
+        
+        self.garden.append(Flower(flowerName: "test", lastWatered: "2021-04-14", lastFertilized: "2021-04-14", waterCylce: 14, fertilizerCycle: 14)!)
 
 
     }
