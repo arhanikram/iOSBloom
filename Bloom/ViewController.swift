@@ -36,6 +36,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
+    @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,14 +114,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     @IBAction func saveButton(_ sender: Any) {
-        performSegue(withIdentifier: "SegueBackToVC", sender: self)
 
         if !(plantNameText.text!.isEmpty) && !(lastWateredText.text!.isEmpty) && !(lastFertilizedText.text!.isEmpty) && !(waterCycleText.text!.isEmpty) && !(fertilizerCycleText.text!.isEmpty) {
         
             
             newFlower = Flower(flowerName: plantNameText.text!, lastWatered: lastWateredText.text!, lastFertilized: lastFertilizedText.text!, waterCylce: Int(waterCycleText.text!)!, fertilizerCycle: Int(fertilizerCycleText.text!)!)
         
-            self.newGarden.addFlower(flowerObj: newFlower)
+            newGarden.addFlower(flowerObj: newFlower)
             
             //self.plants.append(newFlower.printFlower())
             
@@ -129,10 +130,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else{
             print("All values must be filled")
         }
-
+        self.performSegue (withIdentifier: "return", sender: self)
+        self.newGarden.printGarden()
         super.viewDidLoad()
-        
-
 
     }
 
