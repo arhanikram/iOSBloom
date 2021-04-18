@@ -30,22 +30,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var calendar: FSCalendar!
 
-    @IBOutlet weak var plantList: UITableView!/*{
-        didSet{
-            plantList.dataSource = self
-            plantList.delegate = self
-        }
-    }*/
+    @IBOutlet weak var plantList: UITableView!
     
     let cellReuseIdentifier = "cell"
     
-    //var plants: [String] = []
-    
     var date: Date!
+    var selectedDay: Date!
+    let formatter = DateFormatter()
+    
+    
 
     
     override func viewDidLoad() {
-        super.viewDidLoad()       
+        super.viewDidLoad()
+        formatter.dateFormat = "MM-dd-YYYY"
 
         newGarden = Garden()
 
@@ -65,17 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
-    func calendar( _ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
-            let formatter = DateFormatter()
-            formatter.dateFormat = "EEEE MM-dd-YYYY"
-            let string = formatter.string(from: date)
-            print(string)
-        }
-        
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print(self.plants.count)
-        print(newGarden.getCount())
         return self.newGarden.getCount()
     }
     
@@ -92,6 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        date = calendar.today
         
         // create a new cell if needed or reuse an old one
         let cell:UITableViewCell = (self.plantList.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell?)!
@@ -99,11 +88,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // set the text from the data model
 
-        cell.textLabel?.text = self.newGarden.garden[indexPath.row].printFlower()
-        cell.sizeToFit()
-        cell.textLabel?.sizeToFit()
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = .byWordWrapping
+        let string: String!
+        if (selectedDay != nil){
+            string = formatter.string(from: selectedDay)
+            print(selectedDay)
+            
+        }else{
+            string = formatter.string(from: date)
+        }
+        print(selectedDay)
+        //print(string!)
+
+        if (self.newGarden.garden[indexPath.row].getWatered() == string){
+            cell.textLabel?.text = self.newGarden.garden[indexPath.row].printFlower()
+            cell.sizeToFit()
+            cell.textLabel?.sizeToFit()
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.lineBreakMode = .byWordWrapping
+        }
 
         
         return cell

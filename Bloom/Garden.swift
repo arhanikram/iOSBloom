@@ -76,11 +76,11 @@ class Garden: NSObject, NSCoding {
     }
     
     func setup(){
-        self.garden.append(Flower(flowerName: "Orchid", lastWatered: "2021-04-18", lastFertilized: "2021-04-18", waterCylce: 14, fertilizerCycle: 14)!)
+        self.garden.append(Flower(flowerName: "Orchid", lastWatered: "04-18-2021", lastFertilized: "04-18-2021", waterCylce: 14, fertilizerCycle: 14)!)
         
-        self.garden.append(Flower(flowerName: "Cactus", lastWatered: "2021-04-01", lastFertilized: "2021-04-18", waterCylce: 60, fertilizerCycle: 65)!)
+        self.garden.append(Flower(flowerName: "Cactus", lastWatered: "04-01-2021", lastFertilized: "04-01-2021", waterCylce: 60, fertilizerCycle: 65)!)
         
-        self.garden.append(Flower(flowerName: "Sunflower", lastWatered: "2021-04-30", lastFertilized: "2021-04-18", waterCylce: 5, fertilizerCycle: 16)!)
+        self.garden.append(Flower(flowerName: "Sunflower", lastWatered: "04-30-2021", lastFertilized: "04-30-2021", waterCylce: 5, fertilizerCycle: 16)!)
         
 
 
